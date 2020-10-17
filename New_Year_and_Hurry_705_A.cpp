@@ -20,10 +20,16 @@ int main(int argc, char const *argv[])
 	int contest_time = 4*60 - k;
 	int problems = 0; 
 	int problem_time = 0; 
-	while ( (problem_time + (problems+1)*5 <= contest_time) && (problems+1 <= n) ){
+	do{
 		problems++;
-		problem_time += 5*problems;
+		problem_time += 5*problems;		
 	}
+	while(problem_time <= contest_time && problems <= n);
+
+	// while ( (problem_time + (problems+1)*5 <= contest_time) && (problems+1 <= n) ){
+	// 	problems++;
+	// 	problem_time += 5*problems;
+	// }
 
 	// or use for loop
 	// for (int i = 1; i <= n; i++){
